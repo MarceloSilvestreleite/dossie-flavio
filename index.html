@@ -1,195 +1,67 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dossiê Flávio — o que ele não explica</title>
-  <meta name="description" content="Dossiê cidadão sobre Flávio Bolsonaro: rachadinha, Banco Master, Vorcaro, Dark Horse, patrimônio e as perguntas que o candidato não responde." />
-  <meta name="theme-color" content="#0a0a0b" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --bg: #070708;
-      --card: #16161c;
-      --line: #2a2a33;
-      --text: #f4f1ea;
-      --muted: #b7b3a8;
-      --red: #e10600;
-      --red-dim: #8a0a08;
-      --gold: #e7c36a;
-      --paper: #f3ead7;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { font-family: "IBM Plex Sans", system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.55; }
-    a { color: var(--gold); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .bar { position: sticky; top: 0; z-index: 40; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 20px; background: rgba(7,7,8,.92); border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); }
-    .brand { font-family: "Bebas Neue", sans-serif; letter-spacing: .08em; font-size: 1.35rem; }
-    .brand span { color: var(--red); }
-    nav { display: flex; gap: 16px; flex-wrap: wrap; font-size: .82rem; font-weight: 600; }
-    nav a { color: var(--muted); text-decoration: none; }
-    nav a:hover { color: var(--text); }
-    .hero { padding: 56px 20px 40px; max-width: 1100px; margin: 0 auto; display: grid; gap: 28px; }
-    .kicker { color: var(--red); font-weight: 700; letter-spacing: .16em; text-transform: uppercase; font-size: .78rem; }
-    h1 { font-family: "Bebas Neue", sans-serif; font-size: clamp(3.1rem, 9vw, 6.4rem); line-height: .86; letter-spacing: .02em; }
-    h1 em { color: var(--red); font-style: normal; }
-    .lead { font-family: "Source Serif 4", Georgia, serif; font-size: clamp(1.15rem, 2.4vw, 1.45rem); color: var(--paper); max-width: 42rem; }
-    .stamp { display: inline-block; border: 2px solid var(--red); color: var(--red); padding: 6px 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; transform: rotate(-2deg); font-size: .75rem; }
-    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
-    .stat { background: var(--card); border: 1px solid var(--line); padding: 18px 16px; }
-    .stat b { display: block; font-family: "Bebas Neue", sans-serif; font-size: 2.2rem; color: var(--gold); letter-spacing: .03em; }
-    .stat span { color: var(--muted); font-size: .86rem; }
-    section { padding: 28px 20px; max-width: 1100px; margin: 0 auto; }
-    h2 { font-family: "Bebas Neue", sans-serif; font-size: clamp(2rem, 5vw, 3.2rem); letter-spacing: .04em; margin-bottom: 8px; }
-    .sub { color: var(--muted); margin-bottom: 22px; max-width: 46rem; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
-    article.card { background: var(--card); border: 1px solid var(--line); padding: 22px 20px 20px; display: flex; flex-direction: column; gap: 10px; }
-    article.card h3 { font-family: "Source Serif 4", Georgia, serif; font-size: 1.35rem; }
-    .tag { align-self: flex-start; background: var(--red); color: #fff; font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 4px 8px; }
-    .tag.gold { background: #5a4716; color: var(--gold); }
-    article.card p { color: #ddd8cc; font-size: .95rem; }
-    .src { font-size: .78rem; color: var(--muted); margin-top: auto; }
-    .timeline { border-left: 2px solid var(--red-dim); padding-left: 18px; display: grid; gap: 18px; }
-    .t-item { position: relative; }
-    .t-item::before { content: ""; width: 10px; height: 10px; background: var(--red); border-radius: 50%; position: absolute; left: -24px; top: 6px; }
-    .t-item time { color: var(--gold); font-size: .8rem; font-weight: 700; letter-spacing: .06em; }
-    .t-item h3 { font-size: 1.05rem; margin: 2px 0 4px; }
-    .ask { background: linear-gradient(180deg, #1a0c0c, #120808); border: 1px solid #3a1515; padding: 22px; }
-    .ask ol { padding-left: 1.2rem; display: grid; gap: 10px; color: var(--paper); }
-    footer { border-top: 1px solid var(--line); padding: 28px 20px 48px; color: var(--muted); font-size: .86rem; max-width: 1100px; margin: 0 auto; }
-    .legal { margin-top: 14px; max-width: 50rem; }
-    @media (max-width: 720px) { nav { display: none; } .hero { padding-top: 32px; } }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dossiê Flávio — o irmãozão e as contas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Sans:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/app.css" />
 </head>
-<body>
-  <header class="bar">
-    <div class="brand">DOSSIÊ <span>FLÁVIO</span></div>
-    <nav>
-      <a href="#dossie">Dossiê</a>
-      <a href="#linha">Linha do tempo</a>
-      <a href="#perguntas">Perguntas</a>
-      <a href="#fontes">Fontes</a>
-    </nav>
-  </header>
-  <main>
-    <section class="hero">
-      <div>
-        <p class="kicker">Eleição 2026 · dossiê cidadão</p>
-        <h1>ELE QUER A<br>PRESIDÊNCIA.<br><em>E AS CONTAS?</em></h1>
-        <p class="lead" style="margin-top:16px">
-          Flávio Bolsonaro pediu dinheiro a Daniel Vorcaro para um filme do pai,
-          negou o vínculo e depois admitiu. A rachadinha nunca foi julgada no mérito.
-          O patrimônio subiu. As perguntas continuam no ar.
-        </p>
-        <p class="stamp" style="margin-top:18px">sem anistia da memória</p>
-      </div>
-      <div class="stats">
-        <div class="stat"><b>R$ 61 mi</b><span>repassados ao filme Dark Horse, segundo reportagens sobre o acordo com Vorcaro</span></div>
-        <div class="stat"><b>65%</b><span>acham que Flávio errou ao pedir dinheiro a Vorcaro (Genial/Quaest, jun/2026)</span></div>
-        <div class="stat"><b>R$ 8,18 mi</b><span>em bens declarados ao TSE em 2026 — em 2018 eram R$ 1,74 mi</span></div>
-        <div class="stat"><b>R$ 6 mi</b><span>estimativa do MP-RJ no esquema de rachadinha do gabinete na Alerj</span></div>
-      </div>
-    </section>
-    <section id="dossie">
-      <h2>O dossiê</h2>
-      <p class="sub">Não é rumor de grupo. É o que já saiu em Intercept, Folha, G1, CNN, Valor, Quaest e no próprio TSE. O candidato responde desviando. O eleitor não é obrigado a esquecer.</p>
-      <div class="grid">
-        <article class="card">
-          <span class="tag">Banco Master</span>
-          <h3>Pediu dinheiro a Vorcaro. Primeiro negou. Depois “foi só o filme”.</h3>
-          <p>Em maio de 2026 o Intercept revelou áudios e mensagens em que Flávio trata com Daniel Vorcaro, dono do extinto Banco Master, o financiamento de <em>Dark Horse</em>, cinebiografia de Jair Bolsonaro. O acordo circulou na casa dos US$ 24 milhões (cerca de R$ 134 mi). Reportagens apontam ao menos US$ 10,6 milhões / cerca de R$ 61 milhões já transferidos.</p>
-          <p>Questionado, Flávio chamou a informação de mentira. Depois admitiu o pedido e tentou empurrar o escândalo para Lula. Vorcaro está preso. O Master foi liquidado. Haddad resumiu o risco político no dia 8/9/2026: se Flávio for eleito, “o Vorcaro não fica na cadeia”.</p>
-          <p class="src">Fontes: The Intercept Brasil, CNN, Folha, G1, Estadão — 2026</p>
-        </article>
-        <article class="card">
-          <span class="tag">Rachadinha</span>
-          <h3>O começo não foi filme. Foi gabinete.</h3>
-          <p>Quando deputado estadual no Rio, Flávio foi denunciado pelo Ministério Público por liderar organização criminosa que devolvia parte do salário de funcionários do gabinete. O MP-RJ estimou cerca de R$ 6 milhões desviados. Também apontou ao menos R$ 977 mil em gastos sem origem comprovada entre 2010 e 2014 — impostos, móveis, plano de saúde, escola das filhas.</p>
-          <p>Em 2021 STF e STJ anularam provas. Processo criminal não andou no mérito. Anular prova não limpa história. Só interrompe o julgamento.</p>
-          <p class="src">Fonte: Folha, “O que pesa contra Flávio Bolsonaro nas eleições de 2026”</p>
-        </article>
-        <article class="card">
-          <span class="tag gold">Patrimônio</span>
-          <h3>De R$ 1,7 milhão para R$ 8,1 milhões.</h3>
-          <p>No registro de candidatura à Presidência, Flávio declarou R$ 8.186.555,83 em bens. Em 2018, na disputa ao Senado, eram R$ 1.741.758,15. No pacote, uma casa de R$ 6,2 milhões em Brasília — a mesma que o UOL já descreveu com suítes, academia, piscina e spa.</p>
-          <p>Crescimento patrimonial de quem vive de mandato público pede nota fiscal, não slogan.</p>
-          <p class="src">Fonte: UOL / Divulgacand TSE, ago/2026</p>
-        </article>
-        <article class="card">
-          <span class="tag">Pesquisa</span>
-          <h3>O país já leu o recado.</h3>
-          <p>Genial/Quaest (jun/2026): 65% acham que Flávio errou ao pedir dinheiro a Vorcaro. 60% veem suspeita nas conversas. 58% acreditam que ele pode estar escondendo envolvimento ilegal no Master. Atlas/Bloomberg, após os áudios: 51,7% viram Flávio envolvido no esquema.</p>
-          <p>Ele insiste que “quem deve explicações é o Lula”. O eleitor, pela pesquisa, não comprou o desvio.</p>
-          <p class="src">Fontes: CNN, Valor, O Globo, Exame — Quaest e Atlas 2026</p>
-        </article>
-        <article class="card">
-          <span class="tag">TSE</span>
-          <h3>Agora o tribunal também entrou na conversa.</h3>
-          <p>Em 8 de setembro de 2026 o TSE acatou ação da coligação de Lula contra Flávio e o vice Alfredo Gaspar por suposto abuso de poder econômico no Festival de Barretos: palco de show, estrutura privada e plateia estimada em 60 mil pessoas usadas para discurso de campanha, sem contrapartida equivalente.</p>
-          <p>A ação pede cassação e inelegibilidade. Não é sentença. É o tamanho do risco que a campanha resolveu correr no palco de rodeio.</p>
-          <p class="src">Fonte: CNN Brasil, 08/09/2026</p>
-        </article>
-        <article class="card">
-          <span class="tag gold">Método</span>
-          <h3>Quando aperta, ele calunia e muda o assunto.</h3>
-          <p>Em junho de 2026 a Polícia Federal concluiu que Flávio cometeu calúnia ao associar Lula a tráfico internacional de drogas e armas. O relatório foi ao STF. No Master, a linha de defesa virou camisa de campanha: “o Pix é do Bolsonaro, o Master é do Lula”. O banco cresceu sob Campos Neto. O filme do pai foi atrás do dinheiro de Vorcaro.</p>
-          <p>Trocar de alvo não apaga áudio.</p>
-          <p class="src">Fonte: O Globo, 26/06/2026; Gazeta do Povo, 28/08/2026</p>
-        </article>
-      </div>
-    </section>
-    <section id="linha">
-      <h2>Linha do tempo</h2>
-      <p class="sub">O filme estreia em setembro. A fatura veio antes.</p>
-      <div class="timeline">
-        <div class="t-item"><time>2010–2018</time><h3>Alerj, gabinete e a rachadinha</h3><p>MP-RJ denuncia organização criminosa no gabinete. Gastos em dinheiro vivo sem origem. Depois, provas anuladas — sem julgamento de mérito.</p></div>
-        <div class="t-item"><time>2018 → 2026</time><h3>Patrimônio explode no papel do TSE</h3><p>De R$ 1,74 milhão para R$ 8,18 milhões. Mansão em Brasília no centro da declaração.</p></div>
-        <div class="t-item"><time>2025</time><h3>Vorcaro, Master e o dinheiro do filme</h3><p>Negociação do patrocínio de Dark Horse. Repasses milionários. Vorcaro preso em novembro. Banco liquidado.</p></div>
-        <div class="t-item"><time>13 mai 2026</time><h3>Intercept publica os áudios</h3><p>Flávio nega. Em seguida admite o pedido de dinheiro e chama de patrocínio privado.</p></div>
-        <div class="t-item"><time>jun–ago 2026</time><h3>Pesquisa, PF e entrevista na Globo</h3><p>Quaest crava o desgaste. PF aponta calúnia. Na TV, Flávio não entrega o contrato do jeito que a bancada pediu e devolve a conta para Lula.</p></div>
-        <div class="t-item"><time>8 set 2026</time><h3>TSE acata ação por abuso de poder econômico</h3><p>Barretos vira processo. Haddad diz no mesmo dia: se Flávio ganhar, Vorcaro não fica preso.</p></div>
-      </div>
-    </section>
-    <section id="perguntas">
-      <h2>Perguntas que seguem sem resposta</h2>
-      <div class="ask">
-        <ol>
-          <li>Por que negar o vínculo com Vorcaro no primeiro momento, se era “só um patrocínio de filme”?</li>
-          <li>Qual o contrato completo, a prestação de contas linha a linha e o destino de cada real dos ~R$ 61 milhões já apontados?</li>
-          <li>Por que um filme do pai precisava de casa de R$ 134 milhões — e por que o Coaf teria visto mais repasse do que o candidato admite?</li>
-          <li>Que trabalho jurídico justifica notas de R$ 500 mil ligadas ao entorno da operação?</li>
-          <li>Como se explica o salto patrimonial e o dinheiro vivo da época da Alerj, se o processo da rachadinha morreu na prova e não no mérito?</li>
-          <li>Se o Master é “do Lula”, por que o pedido de dinheiro saiu da boca do filho do Bolsonaro?</li>
-        </ol>
-      </div>
-    </section>
-    <section id="fontes">
-      <h2>Fontes</h2>
-      <p class="sub">Quem quiser checar, checa. Site de opinião política com base em reportagem publicada — não é assessoria de candidato.</p>
-      <ul style="display:grid;gap:8px;padding-left:1.1rem;color:#ddd8cc">
-        <li>The Intercept Brasil — áudios e mensagens Flávio–Vorcaro (mai/2026)</li>
-        <li>Folha — “O que pesa contra Flávio Bolsonaro nas eleições de 2026” (27/08/2026)</li>
-        <li>CNN / Valor / O Globo / Exame — Genial/Quaest e Atlas/Bloomberg (mai–jun/2026)</li>
-        <li>G1 / Estadão — fala de Haddad sobre Vorcaro e os R$ 40 bi (08/09/2026)</li>
-        <li>CNN — TSE acata AIJE por abuso de poder econômico em Barretos (08/09/2026)</li>
-        <li>UOL — declaração de bens no TSE (13/08/2026)</li>
-        <li>O Globo — relatório da PF sobre calúnia (26/06/2026)</li>
-        <li>PT.org — síntese das perguntas em aberto (ago/2026)</li>
-      </ul>
-    </section>
-  </main>
-  <footer>
-    <p><strong>Dossiê Flávio</strong> · publicação independente · setembro de 2026</p>
-    <p>Perfil no X: <a href="https://x.com/So_Quem_e_Lula" rel="noopener">@So_Quem_e_Lula</a></p>
-    <p class="legal">
-      Texto de opinião e compilação jornalística sobre figura pública em campanha.
-      As acusações criminais citadas são as que constam de denúncias, reportagens e peças públicas.
-      Parte delas não transitou em julgado. Anulação de prova não é inocência automática — e denúncia não é sentença.
-      Nada aqui é coordenação de campanha oficial.
-    </p>
-  </footer>
-</body>
-</html>
+<body data-page="home">
+<div id="splash" class="splash">
+  <div class="splash-box">
+    <p class="kicker">antes de entrar, ouça</p>
+    <h1>FALA,<br><em>IRMÃOZÃO</em></h1>
+    <div class="faces">
+      <img src="img/flavio-retrato.jpg" alt="Flávio Bolsonaro" />
+      <img src="img/vorcaro-retrato.jpg" alt="Daniel Vorcaro" />
+    </div>
+    <p class="quote">“Pode me dar um toque aí, irmão.” — áudio de Flávio a Vorcaro, Intercept 13/05/2026.</p>
+    <button class="btn" id="enter-site" type="button">Entrar e ouvir o áudio</button>
+    <p class="muted" style="margin-top:12px;font-size:.8rem">O navegador bloqueia som automático. O clique libera o áudio original do Intercept no YouTube.</p>
+  </div>
+</div>
+<header class="topbar">
+  <a class="brand" href="index.html">DOSSIÊ <span>FLÁVIO</span></a>
+  <button class="burger" id="burger" aria-label="Menu"><span></span></button>
+</header>
+<div class="backdrop" id="backdrop"></div>
+<aside class="drawer" id="drawer">
+  <button class="x" id="close-drawer">×</button>
+  <a href="index.html" data-page="home">Início</a>
+  <a href="audio.html" data-page="audio">Áudio do irmãozão</a>
+  <a href="master.html" data-page="master">Banco Master</a>
+  <a href="rachadinha.html" data-page="rachadinha">Rachadinha</a>
+  <a href="videos.html" data-page="videos">Vídeos da campanha</a>
+  <a href="fontes.html" data-page="fontes">Fontes</a>
+</aside>
+<main class="wrap">
+  <p class="kicker">Eleição 2026 · dossiê cidadão</p>
+  <h1>ELE QUER A<br>PRESIDÊNCIA.<br><em>E AS CONTAS?</em></h1>
+  <p class="lead">Flávio chamou Vorcaro de irmão, cobrou o dinheiro do filme do pai e tentou empurrar o Master para o Lula.</p>
+  <div class="duo">
+    <img class="photo" src="img/flavio-pl.jpg" alt="Flávio no PL" />
+    <img class="photo" src="img/vorcaro-master.jpg" alt="Vorcaro e Banco Master" />
+  </div>
+  <p class="caption">Fotos que já rodam na imprensa: Flávio no PL (O Globo) e Vorcaro / Master (G1).</p>
+  <div class="stats">
+    <div class="stat"><b>R$ 61 mi</b><span class="muted">apontados como já pagos ao Dark Horse</span></div>
+    <div class="stat"><b>65%</b><span class="muted">acham que Flávio errou ao pedir dinheiro a Vorcaro</span></div>
+    <div class="stat"><b>R$ 8,18 mi</b><span class="muted">bens no TSE em 2026</span></div>
+    <div class="stat"><b>R$ 6 mi</b><span class="muted">estimativa do MP-RJ na rachadinha</span></div>
+  </div>
+  <div class="grid">
+    <a class="card" href="audio.html"><img class="photo" src="img/flavio-fala.jpg" alt="" /><div class="body"><span class="tag">Áudio</span><h3>O irmãozão cobrando parcela</h3></div></a>
+    <a class="card" href="master.html"><img class="photo" src="img/vorcaro-retrato.jpg" alt="" /><div class="body"><span class="tag">Master</span><h3>Negou. Depois “foi só o filme”.</h3></div></a>
+    <a class="card" href="videos.html"><img class="photo" src="img/flavio-lado.jpg" alt="" /><div class="body"><span class="tag">Vídeo</span><h3>Campanha do Lula no YouTube</h3></div></a>
+    <a class="card" href="rachadinha.html"><img class="photo" src="img/flavio-pl.jpg" alt="" /><div class="body"><span class="tag">Alerj</span><h3>Antes do filme, o gabinete</h3></div></a>
+  </div>
+</main>
+<footer class="site">
+  <p><strong>Dossiê Flávio</strong> · <a href="https://x.com/So_Quem_e_Lula">@So_Quem_e_Lula</a></p>
+  <p class="legal">Opinião com base em reportagem. Áudio e vídeos no YouTube (Intercept, canal Lula, UOL). Denúncia não é sentença.</p>
+</footer>
+<script src="js/app.js"></script>
+</body></html>
