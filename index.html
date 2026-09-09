@@ -1,67 +1,178 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Dossiê Flávio — o irmãozão e as contas</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Sans:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="css/app.css" />
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Dossiê Flávio</title>
+<style>
+:root{--bg:#070708;--card:#16161c;--line:#2a2a33;--text:#f4f1ea;--muted:#b7b3a8;--red:#e10600;--gold:#e7c36a;--paper:#f3ead7}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
+a{color:var(--gold);text-decoration:none}
+img{max-width:100%;display:block}
+.topbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 14px;background:#070708;border-bottom:1px solid var(--line)}
+.brand{font-weight:800;letter-spacing:.08em;color:#fff}
+.brand span{color:var(--red)}
+.clock{font-size:.7rem;color:var(--muted);text-align:right;line-height:1.25}
+.logged{color:var(--gold);font-weight:700}
+.burger{width:42px;height:42px;border:1px solid var(--line);background:var(--card)}
+.burger i{display:block;width:18px;height:2px;margin:0 auto;background:#fff;box-shadow:0 6px 0 #fff,0 -6px 0 #fff}
+.drawer{position:fixed;inset:0 0 0 auto;width:min(84vw,300px);background:#0e0e12;border-left:1px solid var(--line);transform:translateX(100%);z-index:70;padding:18px 14px;display:flex;flex-direction:column;gap:4px}
+#menu:target{transform:translateX(0)}
+.drawer a{color:var(--paper);font-weight:700;padding:12px 6px;border-bottom:1px solid var(--line)}
+.drawer .x{align-self:flex-end;font-size:1.4rem;color:var(--muted);border:0}
+.plantao{display:flex;gap:10px;align-items:center;background:#e10600;color:#fff;padding:8px 14px;font-size:.82rem;overflow:hidden}
+.plantao b{background:#000;padding:2px 6px}
+.wrap{max-width:720px;margin:0 auto;padding:20px 14px 72px}
+.kicker{color:var(--red);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.7rem}
+h1{font-size:clamp(2rem,8vw,3.4rem);line-height:.92;margin:.25em 0 .4em}
+h1 em,h2 em{color:var(--red);font-style:normal}
+h2{font-size:1.25rem;margin:0 0 12px}
+.lead,.muted{color:var(--muted)}
+.lead{color:var(--paper);margin:0 0 16px}
+.urgente{display:block;background:#1a0808;border:1px solid var(--red);padding:12px;margin:0 0 16px;color:var(--text)}
+.urgente strong{display:block;margin:6px 0 4px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 0 28px}
+.stat{background:var(--card);border:1px solid var(--line);padding:12px}
+.stat b{display:block;font-size:1.3rem;color:var(--gold)}
+.card{display:block;background:var(--card);border:1px solid var(--line);padding:14px;color:var(--text);margin:0 0 8px}
+.tag{display:inline-block;background:var(--red);color:#fff;font-size:.65rem;font-weight:700;padding:3px 6px;margin-bottom:6px}
+.btn{display:inline-block;background:var(--red);color:#fff;font-weight:700;border:0;padding:12px 14px;text-transform:uppercase}
+.yt-card{display:block;background:#000;border:1px solid var(--line);margin:0 0 28px;position:relative}
+.yt-card img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.yt-card .play{position:absolute;left:50%;top:42%;transform:translate(-50%,-50%);width:62px;height:62px;border-radius:50%;background:#e10600;color:#fff;font-size:26px;display:grid;place-items:center}
+.yt-card .cap{display:block;padding:10px 12px;background:#111;color:var(--paper)}
+.form,.composer{display:grid;gap:8px}
+.form input,.pix-input{padding:12px;border:1px solid var(--line);background:#0e0e12;color:#fff}
+.composer{margin-top:12px;background:var(--card);border:1px solid var(--line);padding:12px}
+.pixbox{display:grid;gap:12px;background:var(--card);border:1px solid var(--line);padding:14px;margin-bottom:28px}
+.welcome{background:#1a1208;border:1px solid var(--gold);padding:12px;margin:0 0 14px}
+.hide{display:none}
+section{scroll-margin-top:62px;margin-bottom:28px}
+footer{border-top:1px solid var(--line);padding:16px 14px 36px;color:var(--muted);font-size:.8rem;max-width:720px;margin:0 auto}
+</style>
 </head>
-<body data-page="home">
-<div id="splash" class="splash">
-  <div class="splash-box">
-    <p class="kicker">antes de entrar, ouça</p>
-    <h1>FALA,<br><em>IRMÃOZÃO</em></h1>
-    <div class="faces">
-      <img src="img/flavio-retrato.jpg" alt="Flávio Bolsonaro" />
-      <img src="img/vorcaro-retrato.jpg" alt="Daniel Vorcaro" />
-    </div>
-    <p class="quote">“Pode me dar um toque aí, irmão.” — áudio de Flávio a Vorcaro, Intercept 13/05/2026.</p>
-    <button class="btn" id="enter-site" type="button">Entrar e ouvir o áudio</button>
-    <p class="muted" style="margin-top:12px;font-size:.8rem">O navegador bloqueia som automático. O clique libera o áudio original do Intercept no YouTube.</p>
-  </div>
-</div>
+<body>
 <header class="topbar">
-  <a class="brand" href="index.html">DOSSIÊ <span>FLÁVIO</span></a>
-  <button class="burger" id="burger" aria-label="Menu"><span></span></button>
+  <a class="brand" href="#dossie">DOSSIÊ <span>FLÁVIO</span></a>
+  <div class="clock"><div id="logged" class="logged">visitante</div><div id="clock">—</div><div>visitas <b id="visitas">1</b> · lista <b id="cads">0</b></div></div>
+  <a class="burger" href="#menu" aria-label="Menu"><i></i></a>
 </header>
-<div class="backdrop" id="backdrop"></div>
-<aside class="drawer" id="drawer">
-  <button class="x" id="close-drawer">×</button>
-  <a href="index.html" data-page="home">Início</a>
-  <a href="audio.html" data-page="audio">Áudio do irmãozão</a>
-  <a href="master.html" data-page="master">Banco Master</a>
-  <a href="rachadinha.html" data-page="rachadinha">Rachadinha</a>
-  <a href="videos.html" data-page="videos">Vídeos da campanha</a>
-  <a href="fontes.html" data-page="fontes">Fontes</a>
+<aside class="drawer" id="menu">
+  <a class="x" href="#dossie">×</a>
+  <a href="#dossie">Início</a>
+  <a href="#player">Áudio</a>
+  <a href="#noticias">Plantão</a>
+  <a href="#redes">Fórum / galera</a>
+  <a href="#pix">Apoie</a>
+  <a href="#cadastro">Lista / membro</a>
 </aside>
+<div class="plantao"><b>PLANTÃO</b><span>Haddad: se Flávio ganhar, Vorcaro não fica preso · TSE acata ação em Barretos · Áudio Intercept no ar</span></div>
 <main class="wrap">
-  <p class="kicker">Eleição 2026 · dossiê cidadão</p>
+<section id="dossie">
+  <p class="kicker">Eleição 2026</p>
   <h1>ELE QUER A<br>PRESIDÊNCIA.<br><em>E AS CONTAS?</em></h1>
-  <p class="lead">Flávio chamou Vorcaro de irmão, cobrou o dinheiro do filme do pai e tentou empurrar o Master para o Lula.</p>
-  <div class="duo">
-    <img class="photo" src="img/flavio-pl.jpg" alt="Flávio no PL" />
-    <img class="photo" src="img/vorcaro-master.jpg" alt="Vorcaro e Banco Master" />
-  </div>
-  <p class="caption">Fotos que já rodam na imprensa: Flávio no PL (O Globo) e Vorcaro / Master (G1).</p>
+  <p class="lead">Flávio cobrou Vorcaro, chamou de irmão e depois disse que era só filme.</p>
+  <a class="urgente" href="#noticias"><span class="tag">URGENTE</span><strong>Haddad: se Flávio for eleito, Vorcaro não fica na cadeia</strong></a>
   <div class="stats">
-    <div class="stat"><b>R$ 61 mi</b><span class="muted">apontados como já pagos ao Dark Horse</span></div>
-    <div class="stat"><b>65%</b><span class="muted">acham que Flávio errou ao pedir dinheiro a Vorcaro</span></div>
-    <div class="stat"><b>R$ 8,18 mi</b><span class="muted">bens no TSE em 2026</span></div>
-    <div class="stat"><b>R$ 6 mi</b><span class="muted">estimativa do MP-RJ na rachadinha</span></div>
+    <div class="stat"><b>R$ 61 mi</b><span class="muted">apontados ao Dark Horse</span></div>
+    <div class="stat"><b>65%</b><span class="muted">acham que Flávio errou</span></div>
+    <div class="stat"><b>R$ 8,18 mi</b><span class="muted">bens no TSE 2026</span></div>
+    <div class="stat"><b>R$ 6 mi</b><span class="muted">rachadinha Alerj</span></div>
   </div>
-  <div class="grid">
-    <a class="card" href="audio.html"><img class="photo" src="img/flavio-fala.jpg" alt="" /><div class="body"><span class="tag">Áudio</span><h3>O irmãozão cobrando parcela</h3></div></a>
-    <a class="card" href="master.html"><img class="photo" src="img/vorcaro-retrato.jpg" alt="" /><div class="body"><span class="tag">Master</span><h3>Negou. Depois “foi só o filme”.</h3></div></a>
-    <a class="card" href="videos.html"><img class="photo" src="img/flavio-lado.jpg" alt="" /><div class="body"><span class="tag">Vídeo</span><h3>Campanha do Lula no YouTube</h3></div></a>
-    <a class="card" href="rachadinha.html"><img class="photo" src="img/flavio-pl.jpg" alt="" /><div class="body"><span class="tag">Alerj</span><h3>Antes do filme, o gabinete</h3></div></a>
+</section>
+<section id="player">
+  <h2>Áudio do Intercept</h2>
+  <a class="yt-card" href="https://www.youtube.com/watch?v=L1gDhyp24OU" target="_blank" rel="noopener">
+    <img alt="Capa" src="https://img.youtube.com/vi/L1gDhyp24OU/hqdefault.jpg">
+    <span class="play">▶</span>
+    <span class="cap">Pode me dar um toque aí, irmão. · 13/05/2026</span>
+  </a>
+</section>
+<section id="noticias">
+  <h2>Plantão <em>de notícias</em></h2>
+  <a class="card" href="https://g1.globo.com/sp/sao-paulo/noticia/2026/09/08/se-o-flavio-bolsonaro-for-eleito-o-vorcaro-nao-fica-na-cadeia-eles-vao-combinar-o-que-fazer-com-os-r-40-bilhoes-que-estao-fora-do-brasil-diz-haddad-em-sp.ghtml" target="_blank" rel="noopener"><span class="tag">G1 · 08/09</span><h3>Haddad: se Flávio for eleito, Vorcaro não fica na cadeia</h3></a>
+  <a class="card" href="https://www.cnnbrasil.com.br/eleicoes/tse-acata-acao-contra-flavio-por-suposto-abuso-de-poder-economico/" target="_blank" rel="noopener"><span class="tag">CNN · 08/09</span><h3>TSE acata ação por abuso de poder econômico em Barretos</h3></a>
+  <a class="card" href="https://www1.folha.uol.com.br/poder/2026/08/o-que-pesa-contra-flavio-bolsonaro-nas-eleicoes-de-2026.shtml" target="_blank" rel="noopener"><span class="tag">Folha · 27/08</span><h3>O que pesa contra Flávio nas eleições de 2026</h3></a>
+  <a class="card" href="https://www.youtube.com/watch?v=L1gDhyp24OU" target="_blank" rel="noopener"><span class="tag">Intercept · 13/05</span><h3>Áudio: Flávio negociou milhões com Vorcaro</h3></a>
+</section>
+<section id="redes">
+  <h2>Fórum da <em>galera</em></h2>
+  <a class="card" href="https://x.com/So_Quem_e_Lula/status/2097521730818388333" target="_blank" rel="noopener"><span class="tag">X · 09/09</span><h3>A versão de um mentiroso que tentou golpe, ou a do Andrei que prendeu Vorcaro?</h3></a>
+  <a class="card" href="https://x.com/So_Quem_e_Lula/status/2097523829576806613" target="_blank" rel="noopener"><span class="tag">X · 09/09</span><h3>A Globo quer enfiar o golpista fantoche do Trump na goela do povo</h3></a>
+  <div class="composer">
+    <input id="x-link" class="pix-input" placeholder="Cole o link do X">
+    <button class="btn" type="button" onclick="mandarGalera()">Mandar pra galera</button>
   </div>
+  <div id="feed-galera"></div>
+</section>
+<section id="pix">
+  <h2>Apoie o <em>dossiê</em></h2>
+  <p class="lead">A partir de R$ 10 o site continua no ar.</p>
+  <div class="pixbox">
+    <p><strong>Chave PIX</strong></p>
+    <input id="pix-key" class="pix-input" readonly value="marcelosilvestreleite@gmail.com" onclick="this.select()">
+    <button class="btn" type="button" onclick="copiarPix()">Copiar chave PIX</button>
+    <p class="muted" id="pix-ok">Toque na chave para selecionar.</p>
+  </div>
+</section>
+<section id="cadastro">
+  <h2>Seja da <em>lista</em></h2>
+  <p class="lead">Cadastre-se e receba a newsletter do dossiê.</p>
+  <div id="welcome" class="welcome hide"></div>
+  <form class="form" id="form-cadastro">
+    <input id="f-nome" placeholder="Seu nome" required>
+    <input id="f-email" type="email" placeholder="Seu e-mail" required>
+    <input id="f-cidade" placeholder="Cidade / UF">
+    <button class="btn" type="button" onclick="cadastrarNews()">Quero a newsletter</button>
+  </form>
+</section>
 </main>
-<footer class="site">
-  <p><strong>Dossiê Flávio</strong> · <a href="https://x.com/So_Quem_e_Lula">@So_Quem_e_Lula</a></p>
-  <p class="legal">Opinião com base em reportagem. Áudio e vídeos no YouTube (Intercept, canal Lula, UOL). Denúncia não é sentença.</p>
-</footer>
-<script src="js/app.js"></script>
-</body></html>
+<footer>Dossiê Flávio · <a href="https://x.com/So_Quem_e_Lula">@So_Quem_e_Lula</a></footer>
+<script>
+function copiarPix(){
+  var i=document.getElementById("pix-key");
+  if(i){i.focus();i.select();}
+  try{document.execCommand("copy");}catch(e){}
+  var o=document.getElementById("pix-ok");
+  if(o) o.textContent="Chave selecionada. Copie e cole no banco.";
+}
+function mandarGalera(){
+  var inp=document.getElementById("x-link");
+  var url=inp?(inp.value||"").trim():"";
+  if(!url) return;
+  if(url.indexOf("http")!==0) url="https://"+url;
+  var dest=document.getElementById("feed-galera");
+  var a=document.createElement("a");
+  a.className="card"; a.target="_blank"; a.href=url;
+  a.innerHTML='<span class="tag">X · agora</span><h3>'+url+'</h3>';
+  dest.insertBefore(a, dest.firstChild);
+  inp.value="";
+}
+function cadastrarNews(){
+  var nome=(document.getElementById("f-nome").value||"").trim();
+  var email=(document.getElementById("f-email").value||"").trim();
+  if(!nome||!email) return;
+  var log=document.getElementById("logged");
+  if(log) log.textContent="logado: "+nome;
+  var w=document.getElementById("welcome");
+  if(w){w.classList.remove("hide");w.textContent="Bem-vindo, "+nome+".";}
+  try{localStorage.setItem("dossie_user",JSON.stringify({nome:nome,email:email}));}catch(e){}
+}
+(function(){
+  function tick(){var el=document.getElementById("clock"); if(el) el.textContent=new Date().toLocaleString("pt-BR");}
+  tick(); setInterval(tick,1000);
+  try{
+    var u=JSON.parse(localStorage.getItem("dossie_user")||"null");
+    if(u&&u.nome){var el=document.getElementById("logged"); if(el) el.textContent="logado: "+u.nome;}
+  }catch(e){}
+  try{
+    if(!sessionStorage.getItem("hit")){sessionStorage.setItem("hit","1");
+      localStorage.setItem("vis",String(Number(localStorage.getItem("vis")||0)+1));}
+    var v=document.getElementById("visitas"); if(v) v.textContent=localStorage.getItem("vis")||"1";
+  }catch(e){}
+})();
+</script>
+</body>
+</html>
