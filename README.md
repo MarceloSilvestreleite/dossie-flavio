@@ -1,14 +1,19 @@
 # Dossiê Flávio
 
-Site estático de opinião política sobre Flávio Bolsonaro (eleição 2026).
+Site estático multi-página (HTML + CSS + JS), no mesmo espírito da concessionária: várias páginas, menu e JS compartilhado.
 
-Publicação no GitHub Pages:
-1. Repo → Settings → Pages
-2. Source: Deploy from a branch
-3. Branch: `main` / pasta `/ (root)`
-4. Save
+## Páginas
+- `index.html` — splash + home
+- `audio.html` — áudio do Intercept (irmãozão)
+- `master.html` — Banco Master / Dark Horse
+- `rachadinha.html` — Alerj
+- `videos.html` — peças da campanha de Lula + Haddad
+- `fontes.html` — fontes
 
-Link depois de publicar:
-https://marcelosilvestreleite.github.io/dossie-flavio/
+## GitHub Pages
+Settings → Pages → branch `main` / root.
 
-Não misturar com o repositório da disciplina Framework da Anhanguera.
+## Fotos
+A pasta `img/` precisa ir no repo (arrasta no GitHub → Add file). Sem ela, as fotos quebram no Pages.
+
+Link: https://marcelosilvestreleite.github.io/dossie-flavio/
