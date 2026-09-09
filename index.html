@@ -4,125 +4,94 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Dossiê Flávio</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#070708;--card:#16161c;--line:#2a2a33;--text:#f4f1ea;--muted:#b7b3a8;--red:#e10600;--gold:#e7c36a;--paper:#f3ead7}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
-a{color:var(--gold);text-decoration:none}
+body{font-family:"IBM Plex Sans",system-ui,sans-serif;background:#070708;color:#f4f1ea;line-height:1.5}
+a{color:#8b1e1e;text-decoration:none}
 img{max-width:100%;display:block}
-.topbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 14px;background:#070708;border-bottom:1px solid var(--line)}
-.brand{font-weight:800;letter-spacing:.08em;color:#fff}
-.brand span{color:var(--red)}
-.clock{font-size:.7rem;color:var(--muted);text-align:right}
-.burger{width:42px;height:42px;border:1px solid var(--line);background:var(--card)}
+.topbar{position:sticky;top:0;z-index:40;display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:#070708;border-bottom:1px solid #2a2a33}
+.brand{font-weight:800;letter-spacing:.08em;color:#fff}.brand span{color:#e10600}
+.burger{width:42px;height:42px;border:1px solid #2a2a33;background:#16161c}
 .burger i{display:block;width:18px;height:2px;margin:0 auto;background:#fff;box-shadow:0 6px 0 #fff,0 -6px 0 #fff}
-.drawer{position:fixed;inset:0 0 0 auto;width:min(84vw,300px);background:#0e0e12;border-left:1px solid var(--line);transform:translateX(100%);z-index:70;padding:18px 14px;display:flex;flex-direction:column}
+.drawer{position:fixed;inset:0 0 0 auto;width:min(84vw,300px);background:#0e0e12;transform:translateX(100%);z-index:70;padding:16px;display:flex;flex-direction:column}
 #menu:target{transform:translateX(0)}
-.drawer a{color:var(--paper);font-weight:700;padding:12px 6px;border-bottom:1px solid var(--line)}
-.plantao{display:flex;gap:10px;align-items:center;background:#e10600;color:#fff;padding:8px 14px;font-size:.82rem}
-.plantao b{background:#000;padding:2px 6px}
-.wrap{max-width:720px;margin:0 auto;padding:20px 14px 72px}
-.kicker{color:var(--red);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.7rem}
-h1{font-size:clamp(2rem,8vw,3.4rem);line-height:.92;margin:.25em 0 .4em}
-h1 em,h2 em{color:var(--red);font-style:normal}
-h2{font-size:1.25rem;margin:0 0 12px}
-.lead{color:var(--paper);margin:0 0 16px}
-.muted{color:var(--muted);font-size:.85rem}
-.card{display:block;background:var(--card);border:1px solid var(--line);padding:14px;color:var(--text);margin:0 0 8px}
-.card.media{display:grid;grid-template-columns:96px 1fr;gap:10px;align-items:center;padding:8px}
-.card.media img{width:96px;height:72px;object-fit:cover;background:#111}
-.tag{display:inline-block;background:var(--red);color:#fff;font-size:.65rem;font-weight:700;padding:3px 6px;margin-bottom:6px}
-.btn{display:inline-block;background:var(--red);color:#fff;font-weight:700;border:0;padding:12px 14px;text-transform:uppercase}
-.yt-card{display:block;background:#000;border:1px solid var(--line);margin:0 0 28px;position:relative}
-.yt-card img{width:100%;aspect-ratio:16/9;object-fit:cover}
-.yt-card .play{position:absolute;left:50%;top:42%;transform:translate(-50%,-50%);width:62px;height:62px;border-radius:50%;background:#e10600;color:#fff;display:grid;place-items:center}
-.form,.composer{display:grid;gap:8px}
-.form input,.pix-input{padding:12px;border:1px solid var(--line);background:#0e0e12;color:#fff}
-.materia{background:#141418;border:1px solid var(--line);padding:16px;margin:0 0 16px}
-.materia h3{font-size:1.55rem;line-height:1.2;margin:8px 0 10px}
-.materia ul{margin:10px 0 14px 18px;color:var(--paper)}
-.materia p{margin:0 0 12px}
-.materia img{width:100%;max-height:300px;object-fit:cover;margin:8px 0 12px;border:1px solid var(--line)}
-.fonte{font-size:.78rem;color:var(--muted)}
-.hide{display:none}
-section{scroll-margin-top:62px;margin-bottom:28px}
-footer{border-top:1px solid var(--line);padding:16px 14px 36px;color:var(--muted);font-size:.8rem;max-width:720px;margin:0 auto}
+.drawer a{color:#f3ead7;font-weight:700;padding:12px 4px;border-bottom:1px solid #2a2a33}
+.faixa{background:#c4161c;color:#fff;padding:9px 14px;font-size:.8rem;font-weight:700}
+.wrap{max-width:740px;margin:0 auto;padding:16px 12px 64px}
+.capa{font-family:"Source Serif 4",Georgia,serif;font-size:clamp(1.8rem,7vw,3rem);line-height:.95;margin:8px 0 18px}
+.capa em{color:#e10600;font-style:normal}
+.icl{background:#f6f1e4;color:#161616;overflow:hidden}
+.icl-top{background:#0b1f4d;color:#fff;padding:8px 16px;font-size:.7rem;letter-spacing:.16em;font-weight:700}
+.icl-in{padding:18px 16px 22px}
+.sec{color:#c4161c;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.icl h2{font-family:"Source Serif 4",Georgia,serif;font-size:clamp(1.5rem,5.4vw,2.2rem);line-height:1.14;margin:8px 0 12px}
+.olho{font-size:1.08rem;font-weight:600;color:#2a2a2a;margin:0 0 14px}
+.icl ul{margin:0 0 16px 18px}.icl li{margin:0 0 7px}
+.icl figure{margin:0 -16px 14px}
+.icl figure img{width:100%;max-height:430px;object-fit:cover;object-position:center 18%}
+.icl figcaption{font-size:.75rem;color:#666;padding:7px 16px 0}
+.icl p{margin:0 0 12px;font-size:1.03rem}
+.assin{font-size:.78rem;color:#666;border-top:1px solid #e4ddd0;padding-top:10px;margin-top:6px}
+h3.bloco{margin:26px 0 10px}
+.card{display:block;background:#16161c;border:1px solid #2a2a33;color:#f4f1ea;padding:12px;margin:0 0 8px}
+.pix{width:100%;padding:12px;border:1px solid #2a2a33;background:#0e0e12;color:#fff}
+footer{max-width:740px;margin:0 auto;padding:12px 14px 32px;color:#b7b3a8;font-size:.8rem}
 </style>
 </head>
 <body>
 <header class="topbar">
-  <a class="brand" href="#dossie">DOSSIÊ <span>FLÁVIO</span></a>
-  <div class="clock" id="clock">—</div>
+  <a class="brand" href="#materia">DOSSIÊ <span>FLÁVIO</span></a>
   <a class="burger" href="#menu"><i></i></a>
 </header>
 <aside class="drawer" id="menu">
-  <a href="#dossie">×</a>
+  <a href="#materia">×</a>
   <a href="#materia">Matéria do dia</a>
   <a href="#player">Áudio</a>
   <a href="#noticias">Plantão</a>
-  <a href="#redes">Galera</a>
   <a href="#pix">Apoie</a>
 </aside>
-<div class="plantao"><b>PLANTÃO</b><span>Mendonça solta alvos do INSS no mesmo ciclo em que afasta o chefe da PF</span></div>
+<div class="faixa">MATÉRIA DO DIA · 08/09/2026 · CRISE NO SUPREMO</div>
 <main class="wrap">
-<section id="dossie">
-  <p class="kicker">Eleição 2026</p>
-  <h1>ELE QUER A<br>PRESIDÊNCIA.<br><em>E AS CONTAS?</em></h1>
-</section>
-<section id="materia">
-  <h2>Matéria <em>do dia</em></h2>
-  <article class="materia">
-    <p class="kicker">Crise no Supremo · 08 e 09/09/2026</p>
-    <h3>No mesmo giro, Mendonça aperta quem prendeu e folga quem a PF aponta no roubo do INSS</h3>
+<p class="sec">Eleição 2026</p>
+<h1 class="capa">ELE QUER A PRESIDÊNCIA.<br><em>E AS CONTAS?</em></h1>
+<article class="icl" id="materia">
+  <div class="icl-top">DOSSIÊ FLÁVIO · MATÉRIA DO DIA</div>
+  <div class="icl-in">
+    <p class="sec">Crise no Supremo · 8 de setembro de 2026</p>
+    <h2>No dia em que tira da cadeira quem prendeu, Mendonça manda soltar quem a PF aponta no roubo do INSS</h2>
+    <p class="olho">O relator afasta o diretor-geral da Polícia Federal e, horas depois, folga investigados da Operação Sem Desconto. O retrato é oficial. A leitura é inevitável.</p>
     <ul>
-      <li>Afasta Andrei Rodrigues, diretor-geral da PF que tocou Master e INSS.</li>
-      <li>Manda soltar o ex-procurador do INSS alvo de R$ 11,9 milhões na apuração.</li>
-      <li>Tira tornozeleira de nomes da Operação Sem Desconto, entre eles um ex-ministro de Bolsonaro.</li>
+      <li>Andrei Rodrigues, chefe da PF no Master e no INSS, é afastado.</li>
+      <li>Ex-procurador do INSS alvo de R$ 11,9 milhões na apuração deixa a prisão.</li>
+      <li>Tornozeleira cai de nomes da Sem Desconto, inclusive um ex-ministro de Bolsonaro.</li>
     </ul>
-    <img alt="Sessão no STF" src="https://pbs.twimg.com/media/HRvYUhfaIAAqOpW.jpg">
-    <p>A semana no Supremo não pede sutiliza. De um lado, André Mendonça tira do cargo o homem que comandava a Polícia Federal. Do outro, no mesmo 8 de setembro, o mesmo relator manda para a rua investigados do esquema de descontos no INSS. Não é ficção de pasquim. Está no G1, na Folha, no Estadão e no Globo.</p>
-    <p>Andrei Rodrigues é o diretor-geral afastado. Foi sob essa PF que Vorcaro foi preso e que a Operação Sem Desconto vasculhou o desvio em aposentadoria. Mendonça falou em monitoramento ilegal contra si e mandou Andrei e o chefe de Inteligência, Leandro Almada, para fora da cadeira. Fachin deu 72 horas para o ministro responder à AGU, que chama o afastamento de usurpação de competência do presidente da República.</p>
-    <p>Horas depois, a outra face da mesma relatoria: soltura do ex-procurador-geral do INSS Virgílio Antônio Ribeiro de Oliveira Filho, preso desde novembro de 2025. A PF aponta que ele e gente ligada a ele receberam R$ 11,9 milhões de empresas ligadas ao lobista Antônio Carlos Camilo Antunes, o Careca do INSS. Mendonça trocou a cadeia por tornozeleira, passaporte retido e proibição de contato com investigados. Escreveu que, nesta fase, Virgílio não teria “condições objetivas de retomar as atividades ilícitas”.</p>
-    <p>Não parou num nome. A Folha conta seis decisões no mesmo dia. Saiu da prisão também o contador Samuel Chrisostomo do Bomfim Júnior, apontado como operador da Conafer. Perderam a tornozeleira Pedro Alves Corrêa Neto, Gilmar Stelo e Ahmed Mohamad Oliveira Andrade — o ex-José Carlos Oliveira, ex-ministro da Previdência de Bolsonaro. A PF liga Ahmed a pelo menos R$ 100 mil em propina da Conafer, segundo a CartaCapital. Mendonça seguiu manifestação da PGR nesse ponto.</p>
-    <p>O retrato que fica para o leitor é seco. No ciclo em que o relator do INSS e do Master tira de campo quem prendeu banqueiro e vasculhou o rombo da aposentadoria, o mesmo gabinete alivia o regime de quem a própria PF descreve no miolo do desconto irregular. Ninguém aqui foi condenado. Mas ninguém é obrigado a fingir que a coincidência é poesia.</p>
-    <p class="fonte">Fontes: G1, Folha, Estadão, O Globo, CartaCapital, UOL — 08/09/2026. Apuração da PF é acusatória; não há sentença transitada.</p>
-  </article>
-</section>
+    <figure>
+      <img alt="André Mendonça no STF" src="https://commons.wikimedia.org/wiki/Special:FilePath/Ministro_Andr%C3%A9_Mendon%C3%A7a_em_outubro_de_2025.jpg">
+      <figcaption>André Mendonça, relator do INSS e do Master no STF. Foto: Rosinei Coutinho/STF via Wikimedia.</figcaption>
+    </figure>
+    <p>A terça-feira no Supremo não pediu metáfora. De manhã, André Mendonça tira do cargo Andrei Rodrigues, diretor-geral da Polícia Federal. À noite, o mesmo gabinete manda para a rua investigados do esquema de descontos em aposentadoria. G1, Folha, Estadão e O Globo registram as duas pontas.</p>
+    <p>Andrei comandava a PF quando Vorcaro foi preso e quando a Operação Sem Desconto abriu o rombo do INSS. Mendonça falou em monitoramento ilegal contra si e afastou também o chefe de Inteligência, Leandro Almada. Fachin deu 72 horas para o ministro responder à AGU, que chama o ato de usurpação da competência do presidente da República.</p>
+    <p>A outra face sai no mesmo expediente. Virgílio Antônio Ribeiro de Oliveira Filho, ex-procurador-geral do INSS, preso desde novembro de 2025, ganha soltura. A PF aponta que ele e gente ligada a ele receberam R$ 11,9 milhões de empresas ligadas ao lobista Antônio Carlos Camilo Antunes, o Careca do INSS. Mendonça troca a cadeia por tornozeleira, passaporte retido e proibição de contato. Escreve que, nesta fase, Virgílio não teria “condições objetivas de retomar as atividades ilícitas”.</p>
+    <p>Não foi um nome só. A Folha fala em seis decisões. Sai também o contador Samuel Chrisostomo do Bomfim Júnior, apontado como operador da Conafer. Perdem a tornozeleira Pedro Alves Corrêa Neto, Gilmar Stelo e Ahmed Mohamad Oliveira Andrade — o ex-José Carlos Oliveira, ex-ministro da Previdência de Bolsonaro. A PF liga Ahmed a pelo menos R$ 100 mil em propina da Conafer, segundo a CartaCapital.</p>
+    <p>Ninguém aqui foi condenado. A denúncia da polícia não é sentença. O que o dossiê registra é o contraste cru do mesmo relator, no mesmo dia: aperta quem prendeu e folga quem a PF descreve no miolo do desconto irregular. O leitor que chame isso de coincidência. O pasquim chama de manchete.</p>
+    <p class="assin">Redação Dossiê Flávio · Fontes: G1, Folha, Estadão, O Globo, CartaCapital, UOL — 08/09/2026. Apuração da PF é acusatória.</p>
+  </div>
+</article>
 <section id="player">
-  <h2>Áudio do Intercept</h2>
-  <a class="yt-card" href="https://www.youtube.com/watch?v=L1gDhyp24OU" target="_blank" rel="noopener">
-    <img alt="" src="https://img.youtube.com/vi/L1gDhyp24OU/hqdefault.jpg">
-    <span class="play">▶</span>
-  </a>
+  <h3 class="bloco">Áudio do Intercept</h3>
+  <a href="https://www.youtube.com/watch?v=L1gDhyp24OU" target="_blank" rel="noopener"><img alt="" src="https://img.youtube.com/vi/L1gDhyp24OU/hqdefault.jpg"></a>
 </section>
 <section id="noticias">
-  <h2>Plantão</h2>
-  <a class="card media" href="https://g1.globo.com/politica/noticia/2026/09/08/mendonca-manda-soltar-ex-procurador-do-inss.ghtml" target="_blank" rel="noopener">
-    <img alt="" src="https://img.youtube.com/vi/L1gDhyp24OU/hqdefault.jpg">
-    <div><span class="tag">G1 · 08/09</span><h3>Mendonça manda soltar ex-procurador do INSS</h3></div>
-  </a>
-  <a class="card media" href="https://www1.folha.uol.com.br/mercado/2026/09/mendonca-manda-soltar-suspeitos-de-desvios-no-inss-em-meio-a-discussoes-sobre-mudanca-de-relator-no-stf.shtml" target="_blank" rel="noopener">
-    <img alt="" src="https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/06/55236292816_de6bc3e49b_o.jpg?w=800">
-    <div><span class="tag">Folha · 08/09</span><h3>Mendonça flexibiliza medidas contra alvos do INSS</h3></div>
-  </a>
-</section>
-<section id="redes">
-  <h2>Fórum da <em>galera</em></h2>
-  <a class="card media" href="https://x.com/fernandapsol/status/2097507909659729992" target="_blank" rel="noopener">
-    <img alt="" src="https://pbs.twimg.com/media/HRvYUhfaIAAqOpW.jpg">
-    <div><span class="tag">X · Fernanda</span><h3>A quem servem as decisões de André Mendonça?</h3></div>
-  </a>
+  <h3 class="bloco">Plantão</h3>
+  <a class="card" href="https://g1.globo.com/politica/noticia/2026/09/08/mendonca-manda-soltar-ex-procurador-do-inss.ghtml" target="_blank" rel="noopener">G1 · Mendonça manda soltar ex-procurador do INSS</a>
+  <a class="card" href="https://www1.folha.uol.com.br/mercado/2026/09/mendonca-manda-soltar-suspeitos-de-desvios-no-inss-em-meio-a-discussoes-sobre-mudanca-de-relator-no-stf.shtml" target="_blank" rel="noopener">Folha · Relator flexibiliza medidas contra alvos do INSS</a>
 </section>
 <section id="pix">
-  <h2>Apoie</h2>
-  <input id="pix-key" class="pix-input" readonly value="marcelosilvestreleite@gmail.com" onclick="this.select()">
-  <button class="btn" type="button" onclick="var i=document.getElementById('pix-key');if(i){i.select();}try{document.execCommand('copy')}catch(e){}">Copiar PIX</button>
+  <h3 class="bloco">Apoie</h3>
+  <input class="pix" readonly value="marcelosilvestreleite@gmail.com" onclick="this.select()">
 </section>
 </main>
 <footer>Dossiê Flávio · <a href="https://x.com/So_Quem_e_Lula">@So_Quem_e_Lula</a></footer>
-<script>
-(function(){function t(){var e=document.getElementById("clock"); if(e) e.textContent=new Date().toLocaleString("pt-BR");} t(); setInterval(t,1000);})();
-</script>
 </body>
 </html>
